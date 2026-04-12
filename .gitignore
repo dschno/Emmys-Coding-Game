@@ -1,0 +1,9 @@
+# Editor
+.DS_Store
+.vscode/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local
