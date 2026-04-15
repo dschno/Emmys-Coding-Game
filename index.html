@@ -8,11 +8,108 @@
 </head>
 <body>
   <div id="game-container">
-    <h1>Emmy's Coding Game</h1>
-    <div id="game-area">
-      <p>Game coming soon! 🎮</p>
+
+    <!-- HOME SCREEN -->
+    <div id="screen-home" class="screen active">
+      <h1 class="game-title">Binary Blaster</h1>
+      <p class="game-subtitle">Learn the secret language of computers! 💻</p>
+
+      <div class="mode-select">
+        <button class="btn-mode selected" data-mode="numbers">
+          <span class="mode-icon">🔢</span>
+          <span class="mode-label">Numbers</span>
+          <span class="mode-desc">Turn 0s and 1s into numbers</span>
+        </button>
+        <button class="btn-mode" data-mode="letters">
+          <span class="mode-icon">🔤</span>
+          <span class="mode-label">Letters</span>
+          <span class="mode-desc">Decode secret letters!</span>
+        </button>
+      </div>
+
+      <div class="difficulty-select">
+        <label class="difficulty-label">Hint Level:</label>
+        <div class="difficulty-btns">
+          <button class="btn-difficulty active" data-difficulty="easy">Easy 💡</button>
+          <button class="btn-difficulty" data-difficulty="medium">Medium</button>
+          <button class="btn-difficulty" data-difficulty="hard">Hard 🔥</button>
+        </div>
+      </div>
+
+      <button id="btn-start" class="btn-primary">Start Playing!</button>
     </div>
+
+    <!-- GAME SCREEN -->
+    <div id="screen-game" class="screen">
+
+      <div id="game-hud">
+        <div class="hud-item">
+          <span class="hud-label">Score</span>
+          <span id="hud-score" class="hud-value">0</span>
+        </div>
+        <div class="hud-item">
+          <span class="hud-label">Streak</span>
+          <span id="hud-streak" class="hud-value">0</span>
+        </div>
+        <div class="hud-item">
+          <span class="hud-label">Level</span>
+          <span id="hud-level" class="hud-value">1</span>
+        </div>
+        <div class="hud-item">
+          <span class="hud-label">Question</span>
+          <span id="hud-question-counter" class="hud-value">1/10</span>
+        </div>
+      </div>
+
+      <div id="progress-bar-wrap">
+        <div id="progress-bar"></div>
+      </div>
+
+      <div id="question-area">
+        <p id="question-prompt" class="question-prompt"></p>
+        <div id="binary-display" class="binary-display"></div>
+        <button id="btn-hint" class="btn-hint hidden">Show Hint 💡</button>
+        <div id="hint-box" class="hint-box hidden"></div>
+      </div>
+
+      <div id="answer-grid" class="answer-grid"></div>
+
+      <div id="feedback-overlay" class="feedback-overlay hidden">
+        <div id="feedback-message" class="feedback-message"></div>
+      </div>
+
+      <canvas id="celebration-canvas"></canvas>
+
+      <button id="btn-quit" class="btn-secondary btn-quit">Quit</button>
+    </div>
+
+    <!-- RESULTS SCREEN -->
+    <div id="screen-results" class="screen">
+      <h2 id="results-title" class="results-title">Round Complete! 🎉</h2>
+      <div id="results-stats" class="results-stats">
+        <div class="stat-item">
+          <span class="stat-value" id="results-score">0</span>
+          <span class="stat-label">Points</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value" id="results-correct">0/10</span>
+          <span class="stat-label">Correct</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value" id="results-best-streak">0</span>
+          <span class="stat-label">Best Streak</span>
+        </div>
+      </div>
+      <div id="high-score-banner" class="high-score-banner hidden">🏆 New High Score!</div>
+      <p id="results-message" class="results-message"></p>
+      <div class="results-actions">
+        <button id="btn-play-again" class="btn-primary">Play Again!</button>
+        <button id="btn-home" class="btn-secondary">Change Mode</button>
+      </div>
+    </div>
+
   </div>
+
   <script src="game.js"></script>
 </body>
 </html>
