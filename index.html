@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Emmy's Coding Game</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&family=Press+Start+2P&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,8 +14,9 @@
 
     <!-- HOME SCREEN -->
     <div id="screen-home" class="screen active">
-      <h1 class="game-title">Binary Blaster</h1>
-      <p class="game-subtitle">Learn the secret language of computers! 💻</p>
+      <h1 class="game-title">Binary<br>Blaster</h1>
+      <p class="game-subtitle">Learn the secret language of computers!</p>
+      <div id="home-high-score" class="home-high-score hidden">🏆 Best: <span id="home-high-score-value">0</span></div>
 
       <div class="mode-select">
         <button class="btn-mode selected" data-mode="numbers">

@@ -604,6 +604,17 @@ function init() {
     btn.classList.toggle('selected', btn.dataset.mode === lastMode);
   });
 
+  // Show high score on home screen if one exists
+  const best = loadHighScore();
+  if (best > 0) {
+    const banner = document.getElementById('home-high-score');
+    const val    = document.getElementById('home-high-score-value');
+    if (banner && val) {
+      val.textContent = best;
+      banner.classList.remove('hidden');
+    }
+  }
+
   attachHomeListeners();
   attachGameListeners();
   attachResultsListeners();
